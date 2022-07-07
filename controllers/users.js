@@ -1,28 +1,56 @@
 const User = require("../models/user");
 
 function index(req, res, next) {
-  console.log(req.query);
-  // the user has submitted the search form or now
-  let modelQuery = req.query.name
-    ? { name: new RegExp(req.query.name, "i") }
-    : {};
-  // Default to sorting by name
-  let sortKey = req.query.sort || "name";
-  Student.find(modelQuery)
-    .sort(sortKey)
-    .exec(function (err, students) {
-      if (err) return next(err);
-      //Passing search values, name & sortky for use in the EJS
-      res.render("users/index", { users, name: req.query.name, sortKey });
+  User.find({}, function (err, users) {
+    if (err) return next(err);
+    console.log(users);
+    res.render("users/index", {
+      users,
+      user: req.user,
+      name: req.query.name,
     });
-}
-function addPost(req, res, next) {
-  req.user.posts.push(req.body);
-  req.user.save(function (err) {
-    res.redirect("/user");
   });
 }
+
+function myScore(req, res) {
+  res.render("users/myscores", {
+    title: "My Scores",
+    user: req.user,
+    name: req.query.name,
+  });
+}
+
+function newScore(req, res) {
+  res.render("users/new", {
+    title: "New Scores",
+    user: req.user,
+    name: req.query.name,
+  });
+}
+
+function create(req, res) {
+  //req.user is the mongoose doc for logged in user
+  User.findById(req.params.id, function (err, user) {
+    req.user.scores.push(req.body);
+    req.user.save(function (err) {
+      res.redirect("/");
+    });
+  });
+}
+
+function show(req, res) {
+  User.findById(req.params.id);
+  res.render("users/show", {
+    title: "Score Detail",
+    user: req.user,
+    name: req.query.name,
+  });
+}
+
 module.exports = {
   index,
-  addPost,
+  create,
+  new: newScore,
+  myScore,
+  show,
 };

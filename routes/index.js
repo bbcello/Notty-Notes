@@ -3,7 +3,7 @@ var passport = require("passport");
 
 /* GET home page. */
 router.get("/", function (req, res, next) {
-  res.render("./users/index", { title: "Notty Notes" });
+  res.render("users/index", { title: "Notty Notes", user: req.user });
 });
 
 // Google OAuth login route
@@ -16,15 +16,19 @@ router.get(
 router.get(
   "/oauth2callback",
   passport.authenticate("google", {
-    successRedirect: "/users",
-    failureRedirect: "/users",
+    successRedirect: "/",
+    failureRedirect: "/",
   })
 );
 
 // Logging out
-router.get("/logout", function (req, res) {
-  req.logout();
-  res.redirect("/users");
+router.get("/logout", function (req, res, next) {
+  req.logout(function (err) {
+    if (err) {
+      return next(err);
+    }
+    res.redirect("/");
+  });
 });
 
 module.exports = router;

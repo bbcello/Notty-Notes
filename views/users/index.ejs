@@ -2,4 +2,13 @@
 
 <h1>Explore</h1>
 
+<div>
+  <% user.scores.forEach(function(s) { %>
+  <br />
+  <%= s.notty %>
+  <a href="/users/<%= s._id% %>">Details</a>
+  <br />
+  <% }); %>
+</div>
+
 <%- include('../partials/footer') %>

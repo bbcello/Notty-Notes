@@ -1,18 +1,21 @@
 var router = require("express").Router();
-var usersCtrl = require("../controllers/users");
+const usersCtrl = require("../controllers/users");
+
+// GET /newScore
+router.get("/users/new", isLoggedIn, usersCtrl.new);
+
+router.get("/users/myscores", isLoggedIn, usersCtrl.myScore);
+// POST /scores
+router.post("/", isLoggedIn, usersCtrl.create);
 
 // GET /users
 router.get("/users", usersCtrl.index);
 
-// POST /posts
-router.post("/posts", isLoggedIn, usersCtrl.addPost);
-
-// DELET /posts/:id
-// router.delete("/posts/:id", isLoggedIn, usersCtrl.delPost);
+router.get("/", usersCtrl.index);
 
 function isLoggedIn(req, res, next) {
   if (req.isAuthenticated()) return next();
-  res.redirect("./auth/google");
+  res.redirect("/auth/google");
 }
 
 module.exports = router;

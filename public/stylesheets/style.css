@@ -1,13 +1,74 @@
 body {
+  font-family: "Grandstander", cursive;
+  font-weight: bold;
+  color: white;
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  background-image: url("../images/notty-bg.jpg");
+  background-size: 100%;
 }
 
 a {
-  color: #00b7ff;
+  color: #0e1213;
+  font-size: 20px;
 }
 
 .music-icon {
+  margin-left: 15px;
+  width: 70px;
+  height: 70px;
+}
+
+.nav-bar {
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #00b7ff;
+}
+
+.nav:hover {
+  text-decoration: underline;
+}
+
+.nav {
+  margin-left: 80px;
+  text-decoration: none;
+}
+
+.logout-nav {
+  margin-left: 30px;
+}
+
+.login-nav {
+  margin-left: 200px;
+}
+
+.username-nav {
+  margin-left: 150px;
+  margin-right: 10px;
+  font-size: 20px;
+}
+.title-nav {
+  margin-left: 20px;
+  margin-right: 40px;
+  font-size: 26px;
+  text-decoration: none;
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+}
+
+.add-form {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  font-size: 20px;
+}
+
+element.style {
   width: 50px;
-  height: auto;
 }
