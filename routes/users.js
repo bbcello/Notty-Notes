@@ -1,11 +1,13 @@
 var router = require("express").Router();
 const usersCtrl = require("../controllers/users");
 
-// GET /newScore
+// GET New Score
 router.get("/users/new", isLoggedIn, usersCtrl.new);
 
+//GET My Scores
 router.get("/users/myscores", isLoggedIn, usersCtrl.myScore);
-// POST /scores
+
+// POST New scores
 router.post("/", isLoggedIn, usersCtrl.create);
 
 // GET /users

@@ -38,19 +38,9 @@ function create(req, res) {
   });
 }
 
-function show(req, res) {
-  User.findById(req.params.id);
-  res.render("users/show", {
-    title: "Score Detail",
-    user: req.user,
-    name: req.query.name,
-  });
-}
-
 module.exports = {
   index,
   create,
   new: newScore,
   myScore,
-  show,
 };
