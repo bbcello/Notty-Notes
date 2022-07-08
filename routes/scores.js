@@ -1,4 +1,5 @@
 var router = require("express").Router();
+const scores = require("../controllers/scores");
 const scoresCtrl = require("../controllers/scores");
 
 // GET /all scores
@@ -13,9 +14,14 @@ router.post("/", isLoggedIn, scoresCtrl.create);
 // GET New Score
 router.get("/myscores", isLoggedIn, scoresCtrl.myScores);
 
-// // GET Score Detail
-
+// GET Score Detail
 router.get("/scores/:id", isLoggedIn, scoresCtrl.show);
+
+// GET My Score Detail
+router.get("/myscores/:id", isLoggedIn, scoresCtrl.showMyScores);
+
+// DELETE Score
+router.delete("/myscores/:id", isLoggedIn, scoresCtrl.delete);
 
 function isLoggedIn(req, res, next) {
   if (req.isAuthenticated()) return next();

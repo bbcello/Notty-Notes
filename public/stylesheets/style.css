@@ -72,3 +72,7 @@ h1 {
 element.style {
   width: 50px;
 }
+
+.detail-btn {
+  color: yellowgreen;
+}

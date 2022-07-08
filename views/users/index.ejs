@@ -5,9 +5,6 @@
 <% scores.forEach(function(s) { %>
 <br />
 <%= s.notty %>
-<a href="/scores/<%= s._id %>">Details</a>
+<a href="/scores/<%= s._id %>" class="detail-btn">Details</a>
 <br />
-<% }); %>
-<br />
-
-<%- include('../partials/footer') %>
+<% }); %> <%- include('../partials/footer') %>
