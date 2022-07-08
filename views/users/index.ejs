@@ -1,13 +1,13 @@
 <%- include('../partials/header') %>
 
-<h1>Explore</h1>
+<h1>Welcome to Notty Notes</h1>
 
-<div>
-  <% users.forEach(function(s) { %>
-  <br />
-  <%= s.notty %>
-  <br />
-  <% }); %>
-</div>
+<% scores.forEach(function(s) { %>
+<br />
+<%= s.notty %>
+<a href="/scores/<%= s._id %>">Details</a>
+<br />
+<% }); %>
+<br />
 
 <%- include('../partials/footer') %>

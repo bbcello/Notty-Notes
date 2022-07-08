@@ -1,5 +1,12 @@
 <%- include('../partials/header') %>
 
-<h1>My Scores</h1>
+<h1>My Scores test</h1>
+
+<% user.scores.forEach(function(s) { %>
+<br />
+<%= s.notty %>
+<br />
+<% }); %>
+<br />
 
 <%- include('../partials/footer') %>

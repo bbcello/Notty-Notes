@@ -1,0 +1,30 @@
+log in and logout
+<div>
+  <li>
+    <% if (user) { %>
+    <a href="/logout"
+      ><i class="material-icons left">trending_flat</i>Log Out</a
+    >
+    <% } else { %>
+    <a href="/auth/google"
+      ><i class="material-icons left">vpn_key</i>Login with Google</a
+    >
+    <% } %>
+  </li>
+</div>
+
+<div>
+  <% users.forEach(function(user) { %> <% if (user._id.equals(user && user._id))
+  { %>
+  <div class="card-action">
+    <form action="/users" method="POST">
+      <input type="text" name="text" class="white-text" />
+      <button type="submit" class="btn white-text">Add Post</button>
+    </form>
+  </div>
+  <% } %> <% }) %>
+</div>
+
+//req.user is the mongoose doc for logged in user User.findById(req.params.id,
+function (err, user) { req.user.scores.push(req.body); req.user.save(function
+(err) { res.redirect("/"); }); });

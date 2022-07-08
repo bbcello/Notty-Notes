@@ -2,7 +2,7 @@ body {
   font-family: "Grandstander", cursive;
   color: white;
   padding: 50px;
-  font-size: 18px;
+  font-size: 20px;
   background-image: url("../images/notty-bg.jpg");
   background-size: 100%;
 }
@@ -34,10 +34,11 @@ a {
 .nav {
   margin-left: 80px;
   text-decoration: none;
+  font-size: 25px;
 }
 
 .logout-nav {
-  margin-left: 30px;
+  margin-left: 20px;
 }
 
 .login-nav {
@@ -45,14 +46,14 @@ a {
 }
 
 .username-nav {
-  margin-left: 150px;
+  margin-left: 120px;
   margin-right: 10px;
   font-size: 20px;
 }
 .title-nav {
   margin-left: 20px;
   margin-right: 40px;
-  font-size: 26px;
+  font-size: 28px;
   text-decoration: none;
 }
 

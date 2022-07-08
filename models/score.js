@@ -9,7 +9,7 @@ const scoreSchema = new Schema(
     key: String,
     notty: String,
     file: String,
-    user: [{ type: Schema.Types.ObjectId, ref: "User" }],
+    user: { type: Schema.Types.ObjectId, ref: "User" },
   },
   {
     timestamps: true,
