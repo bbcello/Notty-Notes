@@ -1,23 +1,22 @@
 var router = require("express").Router();
 const scoresCtrl = require("../controllers/scores");
 
+// DELETE Score
+router.delete("/myscores/:id", isLoggedIn, scoresCtrl.delete);
+
 // GET /all scores
 router.get("/", scoresCtrl.index);
 
 // GET New Score
 router.get("/new", isLoggedIn, scoresCtrl.new);
 
-// POST new scores
-router.post("/", isLoggedIn, scoresCtrl.create);
-
 // GET My Scores
-router.get("/myscores/", isLoggedIn, scoresCtrl.myScores);
+router.get("/myscores", isLoggedIn, scoresCtrl.myScores);
 
 // GET Score Detail
 router.get("/scores/:id", isLoggedIn, scoresCtrl.show);
-
-// DELETE Score
-router.delete("scores/:id", isLoggedIn, scoresCtrl.delete);
+// POST new scores
+router.post("/", isLoggedIn, scoresCtrl.create);
 
 // PUT update
 router.put("/myscores/:id", isLoggedIn, scoresCtrl.update);

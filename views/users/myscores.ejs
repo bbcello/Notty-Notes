@@ -7,7 +7,7 @@
   <%= s.notty %>
   <br />
   <a href="/scores/<%= s._id %>" class="detail-btn">Details</a>
-  <form action="/scores/<%= s._id %>" method="DELETE" class="delete-btn">
+  <form action="/myscores/<%= s._id %>?_method=delete" method="POST">
     <button>DELETE</button>
   </form>
   <% }); %>

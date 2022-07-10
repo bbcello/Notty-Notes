@@ -42,10 +42,13 @@ function show(req, res) {
   });
 }
 
-function deleteScore(req, res) {
-  Score.findByIdAndDelete(req.params.id, function (err, score) {
-    if (err) return next(err);
-    res.redirect("/myscores");
+function deleteScore(req, res, next) {
+  Score.findOneAndDelete(req.params.id, function (err) {
+    if (err) {
+      res.redirect("/myscores");
+    } else {
+      res.redirect("/myscores");
+    }
   });
 }
 
