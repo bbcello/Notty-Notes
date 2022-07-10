@@ -1,5 +1,4 @@
 var router = require("express").Router();
-const scores = require("../controllers/scores");
 const scoresCtrl = require("../controllers/scores");
 
 // GET /all scores
@@ -11,14 +10,11 @@ router.get("/new", isLoggedIn, scoresCtrl.new);
 // POST new scores
 router.post("/", isLoggedIn, scoresCtrl.create);
 
-// GET New Score
-router.get("/myscores", isLoggedIn, scoresCtrl.myScores);
+// GET My Scores
+router.get("/myscores/", isLoggedIn, scoresCtrl.myScores);
 
 // GET Score Detail
 router.get("/scores/:id", isLoggedIn, scoresCtrl.show);
-
-// GET My Score Detail
-router.get("/scores/:id", isLoggedIn, scoresCtrl.showMyScores);
 
 // DELETE Score
 router.delete("scores/:id", isLoggedIn, scoresCtrl.delete);

@@ -7,6 +7,9 @@
   <%= s.notty %>
   <br />
   <a href="/scores/<%= s._id %>" class="detail-btn">Details</a>
+  <form action="/scores/<%= s._id %>" method="DELETE" class="delete-btn">
+    <button>DELETE</button>
+  </form>
   <% }); %>
   <div><%- include('../partials/footer') %></div>
 </div>

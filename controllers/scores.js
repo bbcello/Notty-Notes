@@ -42,24 +42,13 @@ function show(req, res) {
   });
 }
 
-function showMyScores(req, res) {
-  User.findById(req.params.id, function (err, users) {
-    if (err) return next(err);
-    res.render("users/showmyscores", {
-      scores: req.user.scores,
-      user: req.user,
-      users,
-    });
-  });
-}
 function deleteScore(req, res) {
-  req.user.scores.findByIdAndDelete(req.params.id, function (err, users) {
+  Score.findByIdAndDelete(req.params.id, function (err, score) {
     if (err) return next(err);
-    req.user.scores.save(function (err) {
-      res.redirect("/myscores");
-    });
+    res.redirect("/myscores");
   });
 }
+
 function update(req, res) {
   console.log("update reached with body: ", req.body);
   req.user.scores.findByIdAndUpdateOne(req.params.id, req.body);
@@ -75,6 +64,5 @@ module.exports = {
   myScores,
   show,
   delete: deleteScore,
-  showMyScores,
   update,
 };
