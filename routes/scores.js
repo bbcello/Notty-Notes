@@ -18,11 +18,13 @@ router.get("/myscores", isLoggedIn, scoresCtrl.myScores);
 router.get("/scores/:id", isLoggedIn, scoresCtrl.show);
 
 // GET My Score Detail
-router.get("/myscores/:id", isLoggedIn, scoresCtrl.showMyScores);
+router.get("/scores/:id", isLoggedIn, scoresCtrl.showMyScores);
 
 // DELETE Score
-router.delete("/myscores/:id", isLoggedIn, scoresCtrl.delete);
+router.delete("scores/:id", isLoggedIn, scoresCtrl.delete);
 
+// PUT update
+router.put("/myscores/:id", isLoggedIn, scoresCtrl.update);
 function isLoggedIn(req, res, next) {
   if (req.isAuthenticated()) return next();
   res.redirect("/auth/google");

@@ -1,25 +1,12 @@
 <%- include('../partials/header') %>
 
 <h1>My Scores</h1>
-<div >
-<% user.scores.forEach(function(s) { %>
-<br />
 <div>
-<%= s.notty %>
-<a href="/myscores/<%= s._id %>" class="detail-btn">Details</a>
-</div>
-<form
-  class="delete-btn"
-  action="/myscores/<%= s._id %>?_method=delete"
-  method="POST"
->
-  <button>Delete</button>
-</form>
-<form class="edit" action="/myscores/<%= s._id %>?_method=delete" method="POST">
-  <button>Edit</button>
-  <br>
-  <% }); %>
+  <% score.forEach(function(s) { %>
   <br />
+  <%= s.notty %>
+  <br />
+  <a href="/scores/<%= s._id %>" class="detail-btn">Details</a>
+  <% }); %>
+  <div><%- include('../partials/footer') %></div>
 </div>
-  <%- include('../partials/footer') %>
-</form>

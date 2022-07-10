@@ -1,3 +1,4 @@
+const score = require("../models/score");
 const Score = require("../models/score");
 const User = require("../models/user");
 
@@ -20,22 +21,18 @@ function newScore(req, res) {
 }
 
 function create(req, res) {
-  const newScore = new Score(req.body);
+  let newScore = new Score(req.body);
+  newScore.owner = req.user;
   newScore.save();
-  req.user.scores.push(req.body);
+  req.user.scores.push(newScore);
   req.user.save(function (err) {
     res.redirect("/");
   });
 }
 
-function myScores(req, res) {
-  User.find({}, function (err, users) {
-    if (err) return next(err);
-    console.log(users);
-    res.render("users/myscores", {
-      users,
-      user: req.user,
-    });
+function myScores(req, res, next) {
+  Score.find({ owner: req.user }, function (err, score) {
+    res.render("users/myscores", { score, user: req.user });
   });
 }
 
@@ -46,7 +43,7 @@ function show(req, res) {
 }
 
 function showMyScores(req, res) {
-  User.find({}, function (err, users) {
+  User.findById(req.params.id, function (err, users) {
     if (err) return next(err);
     res.render("users/showmyscores", {
       scores: req.user.scores,
