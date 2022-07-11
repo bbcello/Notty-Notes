@@ -1,6 +1,6 @@
-### Notty Notes
+# Notty Notes
 
-- This App allows you to share and store music scores online.
+- This App allows users to share and download music scores online.
 
 ### Screenshots
 
