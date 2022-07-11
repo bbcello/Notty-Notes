@@ -63,9 +63,16 @@ function edit(req, res) {
 }
 
 function update(req, res) {
-  Score.findByIdAndUpdate(req.body, req.body);
-  console.log("updated");
-  res.redirect("/myscores");
+  Score.findById(req.params.id, function (err, score) {
+    if (!score) return false;
+    score.name = req.body.name;
+    score.composer = req.body.composer;
+    score.key = req.body.key;
+    score.notty = req.body.notty;
+    score.file = req.body.file;
+    score.save();
+    res.redirect("/myscores");
+  });
 }
 
 module.exports = {
