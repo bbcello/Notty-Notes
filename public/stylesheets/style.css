@@ -2,7 +2,7 @@ body {
   font-family: "Grandstander", cursive;
   color: white;
   padding: 50px;
-  font-size: 20px;
+  font-size: 26px;
   background-image: url("../images/notty-bg.jpg");
   background-size: 100%;
 }
@@ -55,6 +55,7 @@ a {
   margin-right: 40px;
   font-size: 28px;
   text-decoration: none;
+  font-weight: 990;
 }
 
 h1 {
@@ -65,14 +66,118 @@ h1 {
 .add-form {
   display: flex;
   flex-direction: column;
-  margin: 20px;
-  font-size: 20px;
+  justify-content: center;
+  align-items: center;
+  background-color: #d9d9d9;
+  width: 1000px;
+  height: 500px;
+  color: black;
 }
 
 element.style {
   width: 50px;
 }
+.edit-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.edit-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #d9d9d9;
+  width: 1000px;
+  height: 500px;
+  color: black;
+}
+
+.delete-btn {
+  font-family: "Grandstander", cursive;
+  background: #ffffff89;
+  font-size: 16px;
+  width: 80px;
+  height: 30px;
+  color: red;
+  border-radius: 5px;
+}
+
+.edit-btn {
+  font-family: "Grandstander", cursive;
+  background: #ffffff5e;
+  font-size: 16px;
+  width: 80px;
+  height: 30px;
+  color: #f2ff00;
+  border-radius: 5px;
+}
 
 .detail-btn {
-  color: yellowgreen;
+  font-family: "Grandstander", cursive;
+  background: #ffffffa1;
+  font-size: 16px;
+  width: 80px;
+  height: 30px;
+  color: blue;
+  border-radius: 5px;
+}
+.details-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #d9d9d9;
+  width: 200;
+  height: fit-content;
+  color: black;
+  width: 1000px;
+  height: 500px;
+}
+
+.details-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.open-btn {
+  font-family: "Grandstander", cursive;
+  font-size: 20px;
+  font-weight: bold;
+  color: #00a6ff;
+  width: 150px;
+  height: 40px;
+  border-radius: 5px;
+}
+.upload-btn {
+  font-family: "Grandstander", cursive;
+  font-size: 20px;
+  width: 150px;
+  height: 40px;
+  border-radius: 5px;
+  position: absolute;
+  left: 650px;
+  top: 670px;
+}
+
+.file-btn {
+  font-family: "Grandstander", cursive;
+  font-size: 14px;
+  border-radius: 5px;
+}
+
+.done-btn {
+  font-family: "Grandstander", cursive;
+  font-size: 20px;
+  width: 150px;
+  height: 40px;
+  border-radius: 5px;
+}
+
+.add-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

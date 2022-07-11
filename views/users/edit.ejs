@@ -1,18 +1,41 @@
 <%- include('../partials/header') %>
-<h1>Update</h1>
-
-<section id="details-page">
-  <br />
-  <%= score.name %>
-  <br />
-  <%= score.composer %>
-  <br />
-  <%= score.key %>
-  <br />
-  <%= score.notty %>
-  <br />
-  <%= score.file %>
-  <br />
-</section>
-
-<%-include('../partials/footer') %>
+<h1>Edit <%= score.notty %> !</h1>
+<div class="edit-page">
+  <form
+    action="/myscores/<%= score.id %>?_method=put"
+    method="POST"
+    class="edit-form"
+  >
+    <label class="add-name"
+      >Name:
+      <input type="text" value="<%= score.name %>" name="name" />
+    </label>
+    <br />
+    <br />
+    <label class="add-composer">
+      Composer/Artist:
+      <input type="text" value="<%= score.composer %>" name="composer" />
+    </label>
+    <br />
+    <br />
+    <label class="add-key">
+      Key:
+      <input type="text" value="<%= score.key %>" name="key" />
+    </label>
+    <br />
+    <br />
+    <label class="add-notty">
+      Notty (Give it a label!):
+      <input type="text" value="<%= score.notty %>" name="notty" />
+    </label>
+    <br />
+    <br />
+    <label class="add-file">
+      <input type="file" value="<%= score.file %>" names="file" />
+    </label>
+    <br />
+    <br />
+    <button type="submit" class="done-btn">Done</button>
+  </form>
+</div>
+<%- include('../partials/footer') %>

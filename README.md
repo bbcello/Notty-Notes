@@ -4,15 +4,18 @@
 
 ### Screenshots
 
-![Alt text](./public/images/screenshot1.png)
-![Alt text](./public/images/screenshot2.png)
-![Alt text](./public/images/screenshot3.png)
+![Alt text](./public/images/explore-ss.png)
+![Alt text](./public/images/myscores-ss.png)
+![Alt text](./public/images/addscore-ss.png)
+![Alt text](./public/images/details-ss.png)
+![Alt text](./public/images/editscore-ss.png)
 
 ### Technology used
 
 - Express JS
 - Node JS
 - Mongo DB
+- Javascript
 - HTML
 - CSS
 - Google Cloud APIs
@@ -26,4 +29,4 @@
 ### Next Steps:
 
 - add sample images of the files
-- add more dynamic CSS
+- add more dynamic CSS (scrolling, interactive animations)

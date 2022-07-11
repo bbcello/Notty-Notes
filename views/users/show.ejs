@@ -1,23 +1,24 @@
 <%- include('../partials/header') %>
 <h1>Details</h1>
-
-<section id="details-page">
-  <br />
-  <div>Name:</div>
-  <div><%= score.name %></div>
-  <br />
-  <div>Composer:</div>
-  <div><%= score.composer %></div>
-  <br />
-  <div>Key</div>
-  <div><%= score.key %></div>
-  <br />
-  <div>Notty</div>
-  <div><%= score.notty %></div>
-  <br />
-  <div>File:</div>
-  <%= score.file %>
-  <br />
-</section>
-
+<div class="details-page">
+  <section class="details-form">
+    <br />
+    <div>Name:</div>
+    <div><%= score.name %></div>
+    <br />
+    <div>Composer/Artist:</div>
+    <div><%= score.composer %></div>
+    <br />
+    <div>Key</div>
+    <div><%= score.key %></div>
+    <br />
+    <div>Notty</div>
+    <div><%= score.notty %></div>
+    <br />
+    <div>File:</div>
+    <%= score.file %>
+    <br />
+    <button class="open-btn">Open</button>
+  </section>
+</div>
 <%-include('../partials/footer') %>

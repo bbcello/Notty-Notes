@@ -4,12 +4,16 @@
 <div>
   <% score.forEach(function(s) { %>
   <br />
-  <%= s.notty %>
   <br />
-  <a href="/scores/<%= s._id %>" class="detail-btn">Details</a>
+  <%= s.notty %>
+  <a href="/scores/<%= s._id %>"><button class="detail-btn">Details</button></a>
+  <a href="/myscores/<%= s._id %>/edit"
+    ><button class="edit-btn">Edit</button></a
+  >
   <form action="/myscores/<%= s._id %>?_method=delete" method="POST">
-    <button>DELETE</button>
+    <button class="delete-btn">Delete</button>
   </form>
   <% }); %>
-  <div><%- include('../partials/footer') %></div>
+  <br />
 </div>
+<%- include('../partials/footer') %>
